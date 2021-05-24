@@ -1,4 +1,4 @@
-export function processNumber(num) {
+export function processNumber(num, id) {
   const cleanNumber = num.replace(/[^\d]/g, '');
   let final = cleanNumber;
 

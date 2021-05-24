@@ -20,7 +20,7 @@ export default function Home() {
     localStorage.setItem('countrycode', newId);
   };
 
-  const link = `https://wa.me/${processNumber(number)}`;
+  const link = `https://wa.me/${processNumber(number, id)}`;
 
   return (
     <>
