@@ -5,7 +5,7 @@ export default function Seo(props) {
   const router = useRouter();
   const meta = {
     title: 'WhatsApp Helper',
-    description: 'A WhatsApp helper to avoid saving number to your contacts.',
+    description: 'A helper to avoid saving number to your contacts.',
     image: 'https://theodorusclarence.com/favicon/large-og.jpg',
     type: 'website',
     robots: 'follow, index',
