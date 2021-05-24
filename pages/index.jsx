@@ -29,6 +29,10 @@ export default function Home() {
       <main>
         <section className='bg-dark'>
           <div className='flex flex-col items-center justify-center min-h-screen space-y-8 text-white layout'>
+            <div className='flex flex-col space-y-2 text-center'>
+              <h1>WhatsApp Helper</h1>
+              <p>A helper to avoid saving number to your contacts.</p>
+            </div>
             <div className='flex flex-col space-y-2'>
               <label className='text-sm font-bold' htmlFor='id'>
                 Country code:
@@ -55,7 +59,24 @@ export default function Home() {
                 pattern='\d*'
               />
             </div>
-            <CustomLink href={link}>{link}</CustomLink>
+            <CustomLink data-splitbee-event='Link Click' href={link}>
+              {link}
+            </CustomLink>
+            <footer className='absolute text-sm text-center text-gray-400 bottom-2'>
+              © {new Date().getFullYear()} by{' '}
+              <CustomLink href='https://theodorusclarence.com'>
+                Theodorus Clarence
+              </CustomLink>
+              <br />
+              <div className='text-gray-500'>
+                This site does not collect any personal information. Open source
+                on{' '}
+                <CustomLink href='https://github.com/theodorusclarence/wa-helper'>
+                  github
+                </CustomLink>
+                .
+              </div>
+            </footer>
           </div>
         </section>
       </main>
