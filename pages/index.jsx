@@ -28,13 +28,21 @@ export default function Home() {
 
       <main>
         <section className='bg-dark'>
-          <div className='flex flex-col items-center justify-center min-h-screen space-y-8 text-white layout'>
+          <div className='flex flex-col items-center justify-center min-h-screen pb-12 space-y-8 text-white layout'>
             <div className='flex flex-col space-y-2 text-center'>
               <h1>WhatsApp Helper</h1>
               <p>A helper to avoid saving number to your contacts.</p>
-              <p className='text-sm text-gray-500'>
-                This site does not collect any personal information.
-              </p>
+              <div>
+                <p className='text-sm text-gray-500'>
+                  This site does not collect any personal information.{' '}
+                  <br className='hidden md:block' />
+                  Feel free to check out the{' '}
+                  <CustomLink href='https://github.com/theodorusclarence/wa-helper'>
+                    repository
+                  </CustomLink>{' '}
+                  and self-host.
+                </p>
+              </div>
             </div>
             <div className='flex flex-col space-y-2'>
               <label className='text-sm font-bold' htmlFor='id'>
