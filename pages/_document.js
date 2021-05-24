@@ -93,6 +93,8 @@ class MyDocument extends Document {
             content='/favicon/ms-icon-144x144.png'
           />
           <meta name='theme-color' content='#ffffff' />
+          {/* Splitbee */}
+          <script async src='https://cdn.splitbee.io/sb.js'></script>
         </Head>
         <body>
           <Main />
