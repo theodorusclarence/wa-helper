@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 export default function Seo(props) {
   const router = useRouter();
   const meta = {
-    title: 'Next.js Tailwind Starter',
-    description: 'A template for Next.js and Tailwindcss by Theodorus Clarence',
+    title: 'WhatsApp Helper',
+    description: 'A WhatsApp helper to avoid saving number to your contacts.',
     image: 'https://theodorusclarence.com/favicon/large-og.jpg',
     type: 'website',
     robots: 'follow, index',
@@ -19,11 +19,11 @@ export default function Seo(props) {
       <meta content={meta.description} name='description' />
       <meta
         property='og:url'
-        content={`https://theodorusclarence.com${router.asPath}`}
+        content={`https://wa.theodorusclarence.com${router.asPath}`}
       />
       <link
         rel='canonical'
-        href={`https://theodorusclarence.com${router.asPath}`}
+        href={`https://wa.theodorusclarence.com${router.asPath}`}
       />
       {/* Open Graph */}
       <meta property='og:type' content={meta.type} />

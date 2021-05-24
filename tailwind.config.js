@@ -14,12 +14,12 @@ module.exports = {
           400: '#00E0F3',
           500: '#00c4fd',
         },
-        dark: '#333333',
+        dark: '#222222',
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

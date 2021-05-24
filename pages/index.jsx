@@ -1,34 +1,61 @@
+import { useState } from 'react';
+
 import Seo from '@/components/Seo';
 import CustomLink from '@/components/CustomLink';
+import { getFromLocalStorage, processNumber } from '@/helper';
 
 export default function Home() {
+  const [id, setId] = useState(
+    () => getFromLocalStorage('countrycode') || '62'
+  );
+  const [number, setNumber] = useState('');
+
+  const handleChange = (e) => {
+    setNumber(e.target.value);
+  };
+
+  const handleIdChange = (e) => {
+    const newId = e.target.value.replace(/[^\d]/g, '');
+    setId(newId);
+    localStorage.setItem('countrycode', newId);
+  };
+
+  const link = `https://wa.me/${processNumber(number)}`;
+
   return (
     <>
       <Seo />
 
       <main>
         <section className='bg-dark'>
-          <div className='flex flex-col items-center justify-center min-h-screen text-white layout'>
-            <h1>
-              <CustomLink href='https://github.com/theodorusclarence/nextjs-tailwind-starter'>
-                NextJS Tailwind Starter
-              </CustomLink>
-            </h1>
-            <p className='mb-4'>
-              By{' '}
-              <CustomLink href='https://theodorusclarence.com'>
-                Theodorus Clarence
-              </CustomLink>
-            </p>
-            <CustomLink href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fnextjs-tailwind-starter'>
-              <img src='https://vercel.com/button' alt='Deploy with Vercel' />
-            </CustomLink>
-            <div className='mt-8 text-dark'>
-              <p className='text-[#ffe347]'>JIT is on</p>
+          <div className='flex flex-col items-center justify-center min-h-screen space-y-8 text-white layout'>
+            <div className='flex flex-col space-y-2'>
+              <label className='text-sm font-bold' htmlFor='id'>
+                Country code:
+              </label>
+              <input
+                className='border-gray-600 rounded-lg bg-dark focus:ring-primary-400'
+                value={id}
+                name='id'
+                onChange={handleIdChange}
+                type='text'
+                pattern='\d*'
+              />
             </div>
-            <footer className='absolute text-gray-300 bottom-2'>
-              © {new Date().getFullYear()}
-            </footer>
+            <div className='flex flex-col space-y-2'>
+              <label className='text-sm font-bold' htmlFor='number'>
+                Input your number:
+              </label>
+              <input
+                className='border-gray-600 rounded-lg bg-dark focus:ring-primary-400'
+                value={number}
+                name='number'
+                onChange={handleChange}
+                type='text'
+                pattern='\d*'
+              />
+            </div>
+            <CustomLink href={link}>{link}</CustomLink>
           </div>
         </section>
       </main>
