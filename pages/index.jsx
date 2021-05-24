@@ -32,6 +32,9 @@ export default function Home() {
             <div className='flex flex-col space-y-2 text-center'>
               <h1>WhatsApp Helper</h1>
               <p>A helper to avoid saving number to your contacts.</p>
+              <p className='text-sm text-gray-500'>
+                This site does not collect any personal information.
+              </p>
             </div>
             <div className='flex flex-col space-y-2'>
               <label className='text-sm font-bold' htmlFor='id'>
@@ -62,20 +65,22 @@ export default function Home() {
             <CustomLink data-splitbee-event='Link Click' href={link}>
               {link}
             </CustomLink>
-            <footer className='absolute text-sm text-center text-gray-400 bottom-2'>
-              © {new Date().getFullYear()} by{' '}
-              <CustomLink href='https://theodorusclarence.com'>
-                Theodorus Clarence
+            <footer className='absolute space-y-2 text-sm text-center text-gray-400 bottom-2'>
+              <CustomLink href='https://www.producthunt.com/posts/whatsapp-helper?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-whatsapp-helper'>
+                <img
+                  src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=297052&theme=dark'
+                  alt='WhatsApp Helper - A WhatsApp helper to avoid saving number to your contacts | Product Hunt'
+                  width='250'
+                  height='54'
+                  className='w-48'
+                />
               </CustomLink>
-              <br />
-              <div className='text-gray-500'>
-                This site does not collect any personal information. Open source
-                on{' '}
-                <CustomLink href='https://github.com/theodorusclarence/wa-helper'>
-                  github
+              <p>
+                © {new Date().getFullYear()} by{' '}
+                <CustomLink href='https://theodorusclarence.com'>
+                  Theodorus Clarence
                 </CustomLink>
-                .
-              </div>
+              </p>
             </footer>
           </div>
         </section>
