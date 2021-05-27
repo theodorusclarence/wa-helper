@@ -85,7 +85,7 @@ export default function Home() {
               </CustomLink>
               <p>
                 © {new Date().getFullYear()} by{' '}
-                <CustomLink href='https://theodorusclarence.com'>
+                <CustomLink href='https://theodorusclarence.com/?ref=wa-helper'>
                   Theodorus Clarence
                 </CustomLink>
               </p>
