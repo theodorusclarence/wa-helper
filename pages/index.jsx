@@ -70,9 +70,7 @@ export default function Home() {
                 pattern='\d*'
               />
             </div>
-            <CustomLink data-splitbee-event='Link Click' href={link}>
-              {link}
-            </CustomLink>
+            <CustomLink href={link}>{link}</CustomLink>
             <footer className='absolute space-y-2 text-sm text-center text-gray-400 bottom-2'>
               <CustomLink href='https://www.producthunt.com/posts/whatsapp-helper?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-whatsapp-helper'>
                 <img
