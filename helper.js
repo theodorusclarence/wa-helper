@@ -15,3 +15,9 @@ export function getFromLocalStorage(key) {
   }
   return null;
 }
+
+export function openGraph(title, description) {
+  const ogTitle = encodeURIComponent(title.trim());
+  const ogDesc = encodeURIComponent(description.trim());
+  return `https://thcl.dev/og?title=${ogTitle}&description=${ogDesc}`;
+}

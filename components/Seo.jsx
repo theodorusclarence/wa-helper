@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import { openGraph } from '@/helper';
+
 export default function Seo(props) {
   const router = useRouter();
   const meta = {
@@ -11,20 +13,15 @@ export default function Seo(props) {
     robots: 'follow, index',
     ...props,
   };
+  meta.image = openGraph(meta.title, meta.description);
 
   return (
     <Head>
       <title>{meta.title}</title>
       <meta name='robots' content={meta.robots} />
       <meta content={meta.description} name='description' />
-      <meta
-        property='og:url'
-        content={`https://wa.theodorusclarence.com${router.asPath}`}
-      />
-      <link
-        rel='canonical'
-        href={`https://wa.theodorusclarence.com${router.asPath}`}
-      />
+      <meta property='og:url' content={`https://wa.thcl.dev${router.asPath}`} />
+      <link rel='canonical' href={`https://wa.thcl.dev${router.asPath}`} />
       {/* Open Graph */}
       <meta property='og:type' content={meta.type} />
       <meta property='og:site_name' content='Theodorus Clarence' />
